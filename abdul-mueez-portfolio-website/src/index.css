@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-amber: #FFC107;
+  --color-black-deep: #111111;
+  --color-blue-deep: #0D47A1;
+  --font-family-montserrat: 'Montserrat', sans-serif;
+  --font-family-playfair: 'Playfair Display', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #FFC107;
+  color: #111111;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFC107;
+  border-radius: 2px;
+}
+
+/* ── Utility color aliases ── */
+.text-amber { color: #FFC107; }
+.bg-amber { background-color: #FFC107; }
+.border-amber { border-color: #FFC107; }
+.text-black-deep { color: #111111; }
+.bg-black-deep { background-color: #111111; }
+
+/* ── Layout ── */
+.section-padding {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+/* ── Typography ── */
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* ── Nav link ── */
+.nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s;
+  font-weight: 500;
+}
+.nav-link:hover { color: #FFC107; }
+
+/* ── WDGTA Logo ── */
+.wdgta-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+}
+.wdgta-logo .line-1 { font-size: 0.85em; opacity: 0.9; }
+.wdgta-logo .line-2 { font-size: 1.3em; color: #FFC107; }
+.wdgta-logo .line-3 { font-size: 0.85em; opacity: 0.9; }
+
+/* ── Form input ── */
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 1rem 1.25rem;
+  outline: none;
+  transition: border-color 0.3s;
+  font-size: 0.875rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.3); }
+.form-input:focus { border-color: #FFC107; }
+select.form-input option { background-color: #111111; }
+
+/* ── Marquee animation ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* ── Float animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* ── Episode card ── */
+.episode-card {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+}
+.episode-card:hover { border-color: rgba(255,193,7,0.4); }
